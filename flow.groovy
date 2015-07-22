@@ -49,11 +49,13 @@ node {
         }
       }
     }
-    // input "How do you like ${env.BUILD_URL}artifact/screenshot.jpg?"
+    input "How do you like ${env.BUILD_URL}artifact/screenshot.jpg?"
 
-    // stage name: 'Promote Image', concurrency: 1
+    stage name: 'Promote Image', concurrency: 1
     // All the tests passed. We can now retag and push the 'latest' image.
-    pcImg.push('latest');    
+    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-login') {
+      pcImg.push('latest');
+    }
   }
 
 }
