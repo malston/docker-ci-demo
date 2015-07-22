@@ -39,7 +39,7 @@ node {
     stage 'Test Image'
     // Spin up a Maven + Xvnc test container, linking it to the petclinic app container
     // allowing the Maven tests to send HTTP requests between the containers.
-    def testImg = docker.build('examplecorp/spring-petclinic-tests:snapshot', 'test')
+    def testImg = docker.build('malston/spring-petclinic-tests:snapshot', 'test')
     // Run the petclinic app in its own Docker container.
     pcImg.withRun {petclinic ->
       testImg.inside("-v /m2repo:/m2repo --link=${petclinic.id}:petclinic") {
