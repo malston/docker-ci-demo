@@ -30,7 +30,7 @@ node {
     // (see above maven.inside() block), so we specify that.
     // The Dockerfile expects the petclinic.war file to be in the 'target' dir
     // relative to its own directory, which will be the case.
-    def pcImg = docker.build("examplecorp/spring-petclinic:${env.BUILD_TAG}", 'app')
+    def pcImg = docker.build("malston/spring-petclinic:${env.BUILD_TAG}", 'app')
 
     // Let us tag and push the newly built image. Will tag using the image name provided
     // in the 'docker.build' call above (which included the build number on the tag).
