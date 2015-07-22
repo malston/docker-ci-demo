@@ -7,7 +7,7 @@ node {
   // First make sure the slave has this image.
   // (If you could set your registry below to mirror Docker Hub,
   // this would be unnecessary as maven.inside would pull the image.)
-  // maven.pull()  // We are pushing to a private secure Docker registry in this demo.
+  maven.pull()  // We are pushing to a private secure Docker registry in this demo.
   // 'docker-registry-login' is the username/password credentials ID as defined in Jenkins Credentials.
   // This is used to authenticate the Docker client to the registry.
   docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-login') {
