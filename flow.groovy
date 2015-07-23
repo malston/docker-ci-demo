@@ -1,5 +1,5 @@
 node {
-  git 'https://github.com/compozed/docker-ci-demo.git'
+  git 'https://github.com/malston/docker-ci-demo.git'
 
   def maven = docker.image('maven:3.3.3-jdk-8'); // https://registry.hub.docker.com/_/maven/
 
