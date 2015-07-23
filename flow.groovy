@@ -54,9 +54,7 @@ node {
   
     stage name: 'Promote Image', concurrency: 1
     // All the tests passed. We can now retag and push the 'latest' image.
-    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-login') {
-      pcImg.push('latest');
-    }
+    pcImg.push('latest');
   }
 
 }
